@@ -7,8 +7,8 @@ class CompaniesController < ApplicationController
 
     respond_with(@companies) do |format|
       format.html # index.html.erb
-      format.js {render :json => @companies, :callback => params[:callback]}
-      format.xml { render :xml => @companies}
+      format.js {render :json => @companies, :include => [:addresses], :callback => params[:callback]}
+      format.xml { render :xml => @companies, :include => [:addresses]}
     end
   end
 
@@ -16,11 +16,13 @@ class CompaniesController < ApplicationController
   # GET /companies/1.json
   def show
     @company = Company.find(params[:id])
+    @addresses = @company.addresses
     respond_with(@company) do |format|
-      format.js {render :json => @company, :include => [:address], :callback => params[:callback]}
+      format.js {render :json => @company, :include => [:addresses], :callback => params[:callback]}
       #render :json => @company.to_xml :include => [:address]
-      format.xml { render :xml => @company, :include => [:address]}
+      format.xml { render :xml => @company, :include => [:addresses]}
     end
+    
   end
 
   # GET /companies/new
