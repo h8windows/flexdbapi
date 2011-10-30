@@ -1,4 +1,6 @@
 Flexdbapi::Application.routes.draw do
+  resources :addresses
+
   resources :companies
 
   # The priority is based upon order of creation:

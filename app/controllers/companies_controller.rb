@@ -16,10 +16,10 @@ class CompaniesController < ApplicationController
   # GET /companies/1.json
   def show
     @company = Company.find(params[:id])
-
     respond_with(@company) do |format|
-      format.js {render :json => @company, :callback => params[:callback]}
-      format.xml { render :xml => @company}
+      format.js {render :json => @company, :include => [:address], :callback => params[:callback]}
+      #render :json => @company.to_xml :include => [:address]
+      format.xml { render :xml => @company, :include => [:address]}
     end
   end
 

@@ -19,8 +19,18 @@
   <b>Interest:</b>
   <%= @company.interest %>
 </p>
-
-
+<p>
+  <b>Address1:</b>
+  <%= @company.address.address1 %>
+</p>
+<p>
+  <b>Latitude:</b>
+  <%= @company.address.latitude %>
+</p>
+<p>
+  <b>Longitude:</b>
+  <%= @company.address.longitude %>
+</p>
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
 <div id="stuff"></div>
