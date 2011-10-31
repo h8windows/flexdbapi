@@ -1,4 +1,8 @@
 Flexdbapi::Application.routes.draw do
+  resources :listings
+
+  resources :markets
+
   resources :addresses
 
   resources :companies

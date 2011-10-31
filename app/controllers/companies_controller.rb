@@ -17,10 +17,11 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
     @addresses = @company.addresses
+    @listings = @company.listings
     respond_with(@company) do |format|
-      format.js {render :json => @company, :include => [:addresses], :callback => params[:callback]}
+      format.js {render :json => @company, :include => [:addresses, :listings], :callback => params[:callback]}
       #render :json => @company.to_xml :include => [:address]
-      format.xml { render :xml => @company, :include => [:addresses]}
+      format.xml { render :xml => @company, :include => [:addresses, :listings]}
     end
     
   end

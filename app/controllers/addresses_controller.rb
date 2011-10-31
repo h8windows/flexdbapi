@@ -14,6 +14,7 @@ class AddressesController < ApplicationController
   # GET /addresses/1.json
   def show
     @address = Address.find(params[:id])
+    @listings = @address.listings
 
     respond_to do |format|
       format.html # show.html.erb

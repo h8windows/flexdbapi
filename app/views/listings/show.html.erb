@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Base listing:</b>
+  <%= @listing.base_listing %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @listing.address_id %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @listing.category_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

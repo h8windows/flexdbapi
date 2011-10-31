@@ -4,7 +4,10 @@
   <b>Title:</b>
   <%= @company.title %>
 </p>
-
+<p>
+  <b>ID:</b>
+  <%= @company.id %>
+</p>
 <p>
   <b>Market:</b>
   <%= @company.market_id %>
@@ -20,10 +23,12 @@
   <%= @company.interest %>
 </p>
 <% unless @company.addresses.empty? %>
-        <table class="microposts" summary="Company Addresses">
+        <table class="addresses" summary="Company Addresses">
           <%= render @addresses %>
+		<%= render @listings %>
         </table>
       <% end %>
+<%= link_to 'Add Address', new_address_path %><br />
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
 <div id="stuff"></div>

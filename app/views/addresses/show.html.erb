@@ -19,7 +19,11 @@
   <b>Longitude:</b>
   <%= @address.longitude %>
 </p>
-
+<% unless @address.listings.empty? %>
+        <table class="listings" summary="Company Listings">
+          <%= render @listings %>
+        </table>
+      <% end %>
 
 <%= link_to 'Edit', edit_address_path(@address) %> |
 <%= link_to 'Back', addresses_path %>

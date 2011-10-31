@@ -1,0 +1,27 @@
+<h1>Listing listings</h1>
+
+<table>
+  <tr>
+    <th>Base listing</th>
+    <th>Address</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @listings.each do |listing| %>
+  <tr>
+    <td><%= listing.base_listing %></td>
+    <td><%= listing.address_id %></td>
+    <td><%= listing.category_id %></td>
+    <td><%= link_to 'Show', listing %></td>
+    <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+    <td><%= link_to 'Destroy', listing, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Listing', new_listing_path %>

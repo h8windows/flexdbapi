@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Market title:</b>
+  <%= @market.market_title %>
+</p>
+<% unless @market.companies.empty? %>
+        <table class="addresses" summary="Market Companies">
+          <%= render @companies %>
+        </table>
+      <% end %>
+
+<%= link_to 'Edit', edit_market_path(@market) %> |
+<%= link_to 'Back', markets_path %>

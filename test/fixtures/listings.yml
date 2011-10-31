@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  base_listing: MyText
+  address_id: 1
+  category_id: 1
+
+two:
+  base_listing: MyText
+  address_id: 1
+  category_id: 1
